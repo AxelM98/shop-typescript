@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Shirt",
+      "price": 99,
+      "imgUrl": "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    },
+    {
+      "id": 2,
+      "name": "Phone",
+      "price": 1199,
+      "imgUrl": "https://images.pexels.com/photos/4549416/pexels-photo-4549416.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "price": 1.05,
+      "imgUrl": "https://images.pexels.com/photos/206959/pexels-photo-206959.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "price": 140000,
+      "imgUrl": "https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    }
+  ]

@@ -1,0 +1,125 @@
+@import "../../styles.scss";
+
+.storeItem {
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: themed("bgSoft");
+    .storeItemImage {
+      margin-bottom: 1rem;
+    }
+
+    .storeItemDetails {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .storeItemTitle {
+        color: themed("textSoft");
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size: 2rem;
+        .storeItemName {
+          flex: 1;
+        }
+        .storeItemPrice {
+          color: themed("textSofter");
+          font-weight: 500;
+          font-size: 1.5rem;
+        }
+      }
+
+      .storeItemAction {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        gap: 0.5rem;
+        .link {
+          width: 100%;
+          .navToProductPageBtn {
+            background-color: #038B03;
+            width: 100%;
+            border: none;
+            color: whitesmoke;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+              background-color: #00AA00;
+            }
+          }
+        }
+        .addToCartBtn {
+          background-color:#0063C5;
+          width: 100%;
+          border: none;
+          color: whitesmoke;
+          cursor: pointer;
+          padding: 0.5rem;
+          border-radius: 0.25rem;
+          transition: background-color 0.3s ease-in-out;
+
+          &:hover {
+            background-color: #0075E9;
+          }
+        }
+
+        .storeItemQuantity {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          .storeItemQuantityControls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .quantityValue{
+              color: themed("textSoft");
+            }
+            button {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #0063C5;
+              color: whitesmoke;
+              border: 2px solid blue;
+              border-radius: 100%;
+              height: 2rem;
+              width: 2rem;
+              font-size: 1.2rem;
+              transition: all 0.5s ease;
+              cursor: pointer;
+              &:hover {
+                background-color: #0075E9;
+                transform: scale(1.1);
+              }
+            }
+          }
+
+          .remove {
+            button {
+              background-color: #B10000;
+              color: whitesmoke;
+              border-radius: 1.5rem;
+              padding: 0.2rem 1rem;
+              border: 3px solid #650000;
+              transition: all 0.5s ease;
+              cursor: pointer;
+              &:hover {
+                background-color: #ef0000;
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import "../../styles.scss";
+
+.slider {
+  @include themify($themes) {
+    height: calc(100vh - 80px);
+    width: 100vw;
+    min-width: 100vw;
+    position: relative;
+    overflow: hidden;
+    .info {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      left: 0;
+      right: 0;
+      top: 100px;
+      margin: auto;
+      color: themed("sliderColor");
+
+      .left {
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        flex: 1;
+        padding-left: 100px;
+
+        h2 {
+          color: themed("sliderColor");
+          font-style: italic;
+          font-weight: 500;
+        }
+        button {
+          width: fit-content;
+          padding: 1rem 3rem;
+          background-color: transparent;
+          border: 3px solid themed("sliderColor");
+          color: themed("sliderColor");
+          border-radius: 1.5rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.5s ease;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+      .right {
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        flex: 1;
+        padding-right: 100px;
+        h2 {
+          color: themed("sliderColor");
+        }
+        button {
+          width: fit-content;
+          padding: 1rem 3rem;
+          background-color: transparent;
+          border: 3px solid themed("sliderColor");
+          color: themed("sliderColor");
+          border-radius: 1.5rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.5s ease;
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+
+    .container {
+      width: 300vw;
+      min-width: 300vw;
+      height: 100%;
+      display: flex;
+      transition: all 1s ease;
+      img {
+        width: 100vw;
+        min-width: 100vw;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .icons {
+      position: absolute;
+      width: fit-content;
+      display: flex;
+      left: 0;
+      right: 0;
+      bottom: 100px;
+      margin: auto;
+      gap: 10px;
+
+      .icon {
+        width: 50px;
+        height: 50px;
+        border: 1px solid themed("sliderColor");
+        color: themed("sliderColor");
+        font-weight: bold;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 999;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

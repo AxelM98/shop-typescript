@@ -1,0 +1,83 @@
+@import "../../styles.scss";
+
+.navbar {
+  @include themify($themes) {
+    padding: 0.5rem;
+    background-color: themed("bgSoft");
+    .container {
+      display: flex;
+      align-items: center;
+      height: 80px;
+      .left {
+        flex: 1;
+        .navbarLogo {
+          text-decoration: none;
+          color: rgb(178, 152, 0);
+          font-size: 2.5rem;
+          padding: 1rem;
+          color: themed("logo");
+          letter-spacing: 2px;
+          font-family: "Italianno";
+          font-weight: bold;
+        }
+      }
+      .right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 20px;
+        gap: 1.3rem;
+        color: themed("textSoft");
+        ul {
+          display: flex;
+          list-style: none;
+          .navLink {
+            color: themed("textSoft");
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 1rem;
+          }
+        }
+
+        .btnCart {
+          position: relative;
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          color: themed("text");
+          font-weight: bold;
+          border: 2px solid themed("text");
+          transition: all 0.5s ease;
+          background-color: transparent;
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          .badge {
+            color: #fff;
+            background-color: #dc3545;
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(25%, 25%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
