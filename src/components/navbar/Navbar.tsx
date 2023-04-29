@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.scss";
 import { useShoppingCart } from "./../../context/ShoppingCartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../context/DarkModeContext";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
@@ -10,6 +10,21 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 export function Navbar() {
   const { openCart, cartQuantity } = useShoppingCart();
   const { toggle, darkMode } = useContext(DarkModeContext);
+  const [blink, setBlink] = useState(false);
+
+  useEffect(() => {
+    if (cartQuantity !== 0) {
+      setBlink(true);
+      const timeoutId = setTimeout(() => {
+        setBlink(false);
+      }, 4000);
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [cartQuantity]);
+
+  const badgeClasses = `${blink ? "blinking-badge" : "badge"}`;
 
   return (
     <div className="navbar">
@@ -53,7 +68,7 @@ export function Navbar() {
           {cartQuantity > 0 && (
             <button className="btnCart" onClick={openCart}>
               <ShoppingCartOutlinedIcon />
-              <span className="badge">{cartQuantity}</span>
+              <span className={badgeClasses}>{cartQuantity}</span>
             </button>
           )}
         </div>

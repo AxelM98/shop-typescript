@@ -76,8 +76,31 @@
             font-size: 0.8rem;
             font-weight: 500;
           }
+          .blinking-badge {
+            color: #fff;
+            background-color: #dc3545;
+            width: 1.5rem;
+            height: 1.5rem;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(25%, 25%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+            animation: blink 1s infinite;
+          }
         }
       }
     }
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
