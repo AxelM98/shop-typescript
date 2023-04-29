@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import "./navbar.scss";
+import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "./../../context/ShoppingCartContext";
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../context/DarkModeContext";
@@ -7,10 +7,10 @@ import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-export function Navbar() {
+export function Navbar(): JSX.Element {
   const { openCart, cartQuantity } = useShoppingCart();
   const { toggle, darkMode } = useContext(DarkModeContext);
-  const [blink, setBlink] = useState(false);
+  const [blink, setBlink] = useState<boolean>(false);
 
   useEffect(() => {
     if (cartQuantity !== 0) {
